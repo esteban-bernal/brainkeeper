@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Brainkeeper.Api/Brainkeeper.Api.csproj" />
+    <Project Path="src/Brainkeeper.Indexer/Brainkeeper.Indexer.csproj" />
+    <Project Path="src/Brainkeeper.Linter/Brainkeeper.Linter.csproj" />
+    <Project Path="src/Brainkeeper.Mcp/Brainkeeper.Mcp.csproj" />
+    <Project Path="src/Brainkeeper.Promoter/Brainkeeper.Promoter.csproj" />
+    <Project Path="src/Brainkeeper.Retriever/Brainkeeper.Retriever.csproj" />
+    <Project Path="src/Brainkeeper.Vault/Brainkeeper.Vault.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Brainkeeper.Tests/Brainkeeper.Tests.csproj" />
+  </Folder>
+</Solution>

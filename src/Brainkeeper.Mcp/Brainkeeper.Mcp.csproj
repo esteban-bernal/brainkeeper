@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brainkeeper.Vault\Brainkeeper.Vault.csproj" />
+    <ProjectReference Include="..\Brainkeeper.Indexer\Brainkeeper.Indexer.csproj" />
+    <ProjectReference Include="..\Brainkeeper.Retriever\Brainkeeper.Retriever.csproj" />
+    <ProjectReference Include="..\Brainkeeper.Promoter\Brainkeeper.Promoter.csproj" />
+    <ProjectReference Include="..\Brainkeeper.Linter\Brainkeeper.Linter.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ModelContextProtocol" Version="2.3.1" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

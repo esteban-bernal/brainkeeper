@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Brainkeeper.Api-622ef9da-5c1f-4c25-9641-f802dc9a2696</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.AI" Version="10.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brainkeeper.Mcp\Brainkeeper.Mcp.csproj" />
+  </ItemGroup>
+</Project>

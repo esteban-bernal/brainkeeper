@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "brain/idea.schema.json",
+  "title": "Nota tipo idea",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9-]+$"
+    },
+    "type": {
+      "type": "string",
+      "const": "idea"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "author": {
+      "type": "string",
+      "pattern": "^(esteban|agent:[a-z-]+)$"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "inbox",
+        "daily",
+        "wiki"
+      ]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "private"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "stale",
+        "archived"
+      ]
+    },
+    "trigger": {
+      "type": "string"
+    },
+    "next": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "title",
+    "created",
+    "updated",
+    "author",
+    "reviewed",
+    "layer",
+    "visibility",
+    "status",
+    "trigger"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "brain/borrador.schema.json",
+  "title": "Nota tipo borrador",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9-]+$"
+    },
+    "type": {
+      "type": "string",
+      "const": "borrador"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "author": {
+      "type": "string",
+      "pattern": "^(esteban|agent:[a-z-]+)$"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "wiki"
+      ]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "stale",
+        "archived"
+      ]
+    },
+    "newsletter_issue": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "pipeline_state": {
+      "type": "string",
+      "enum": [
+        "idea",
+        "borrador",
+        "revisado",
+        "aprobado",
+        "publicado"
+      ]
+    },
+    "source_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "title",
+    "created",
+    "updated",
+    "author",
+    "reviewed",
+    "layer",
+    "visibility",
+    "status",
+    "pipeline_state",
+    "source_notes"
+  ],
+  "additionalProperties": false
+}

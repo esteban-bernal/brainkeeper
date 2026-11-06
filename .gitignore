@@ -1,0 +1,9 @@
+bin/
+obj/
+*.user
+.vs/
+.idea/
+*.sqlite
+*.sqlite-journal
+.env
+TestResults/

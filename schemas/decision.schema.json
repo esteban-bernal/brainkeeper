@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "brain/decision.schema.json",
+  "title": "Nota tipo decision",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9-]+$"
+    },
+    "type": {
+      "type": "string",
+      "const": "decision"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "author": {
+      "type": "string",
+      "pattern": "^(esteban|agent:[a-z-]+)$"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "wiki"
+      ]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "private"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "stale",
+        "archived"
+      ]
+    },
+    "context": {
+      "type": "string"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2
+    },
+    "chosen": {
+      "type": "string"
+    },
+    "why": {
+      "type": "string",
+      "minLength": 20
+    },
+    "revisit": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "title",
+    "created",
+    "updated",
+    "author",
+    "reviewed",
+    "layer",
+    "visibility",
+    "status",
+    "context",
+    "options",
+    "chosen",
+    "why"
+  ],
+  "additionalProperties": false
+}
